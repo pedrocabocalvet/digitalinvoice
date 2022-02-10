@@ -1,0 +1,105 @@
+<mat-card>
+    <mat-card-content>
+    <mat-card-title>Nueva Factura</mat-card-title>
+    <mat-card-subtitle>Detalle</mat-card-subtitle>
+    
+     
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>  </mat-panel-title>
+                    <mat-panel-description> 
+                        <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>               
+               
+                  <mat-form-field>
+                    <mat-label>Empresa</mat-label>
+                    <mat-select [(value)]="factura.idCliente"  (selectionChange)="select($event.value)" placeholder="Mode">
+                      <mat-option *ngFor="let client of clientes | async" [value]="client.id">
+                        {{client.nombre}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                <div class="container">
+
+                  <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                    <mat-form-field>
+                      <input matInput placeholder="Fecha" [matDatepicker]="picker"  [(ngModel)]="factura.fecha" 
+                       (focus)="picker.open()"> 
+                       <mat-datepicker #picker></mat-datepicker>
+                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <input matInput type="string"  [(ngModel)]="factura.serie"  placeholder="Serie">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <input matInput type="string"  [(ngModel)]="factura.numero"  placeholder="Número">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <input matInput type="string"  [(ngModel)]="factura.importe"  placeholder="Importe">
+                    </mat-form-field>
+                  
+                  </div>
+
+                  <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                    <div class="filezone">
+                    
+                      <label for="factura">Factura: {{url}}</label> <br>
+                      <input id="factura" type="file" (change)="uploadFile($event)" placeholder="Factura" /> 
+                      
+                    </div>
+                    
+                  </div>
+
+                  <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                    <div class="filezone">
+                    
+                      <label for="anticipo">Anticipo: {{url}}</label> <br>
+                      <input id="anticipo" type="file" (change)="uploadFile($event)" placeholder="Anticipo" /> 
+                      
+                    </div>
+                    
+                  </div>
+              
+                </div>
+
+            </mat-expansion-panel>
+           
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Documentos </mat-panel-title>
+                </mat-expansion-panel-header>
+            
+                <mat-action-row>              
+                 
+                  <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+                   
+                </mat-action-row>
+            </mat-expansion-panel>
+       
+            <mat-action-row>
+              <button mat-button color="primary" (click)="save()">Guardar</button>                    
+          </mat-action-row>
+
+    </mat-card-content>
+</mat-card>
+
+<br> 
+<ngx-dropzone (change)="onSelect($event)">
+
+  <ngx-dropzone-label>Arrastra documentos!</ngx-dropzone-label>
+
+  <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+
+    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+
+  </ngx-dropzone-preview>
+
+</ngx-dropzone>

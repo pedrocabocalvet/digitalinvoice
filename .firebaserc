@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "digitalsdocs": {
+      "hosting": {
+        "material": [
+          "digitalsdocs"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+:host /deep/ a.ng2-smart-page-link.page-link {
+    color: black !important;
+    padding: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 4px !important;
+}
+
+ /* selected paging number */
+ :host /deep/ span.ng2-smart-page-link.page-link {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: white;
+ font-weight: bold;
+ line-height: 6px;
+ }
+ :host /deep/ span.ng2-smart-page-item.page-item.disabled {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: grey;
+ font-weight: bold;
+ line-height: 6px;
+ }
+ 
+ /* previous paging button */
+ :host /deep/ a.ng2-smart-page-link.page-link.page-link-prev {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: rgb(225, 124, 65);
+ font-weight: bold;
+ line-height: 6px;
+ }
+ 
+ /* previous paging button disabled */
+ :host /deep/ span.ng2-smart-page-link.page-link.page-link-prev.disabled {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: grey;
+ font-weight: bold;
+ line-height: 6px;
+ }
+ 
+ /* next paging button */
+ :host /deep/ a.ng2-smart-page-link.page-link.page-link-next {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: rgb(225, 65, 65);
+ font-weight: bold;
+ line-height: 6px;
+ }
+ 
+ /* next paging button */
+ :host /deep/ span.ng2-smart-page-link.page-link.page-link-next.disabled {
+ height: 60px;
+ width: 60px;
+ text-align: center;
+ vertical-align: middle;
+ color: grey;
+ font-weight: bold;
+ line-height: 6px;
+ }
+
+ .container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.mat-expansion-panel-header-title {
+  color: rgb(50, 12, 141) !important;
+}
+
+
+
+.container .mat-form-field {
+    width: 220px;
+}
+  
+.container form {
+   margin-bottom: 20px;
+}
+  
+.container form > * {
+  margin: 5px 0;
+}
+  
+.container .mat-radio-button {
+  margin: 0 12px;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label .mat-form-field.disabled{
+  /*change color of label*/
+  color:  rgb(0, 255, 34);
+ }
+
+
+ ::ng-deep.mat-form-field  .mat-form-field-label{
+   color:rgb(12 70 141) !important;
+
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color:  rgb(12 70 141) !important;
+ }
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color:  rgb(12 70 141);
+}
+
+
+:host /deep/ ng2-smart-table thead > tr > th  { 
+  background-color:rgb(136, 197, 247);  
+}
+:host /deep/ ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  text-align: center;
+  color: rgb(12 70 141);
+}

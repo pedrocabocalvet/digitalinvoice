@@ -1,0 +1,58 @@
+.container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.mat-expansion-panel-header-title {
+  color: rgb(40, 182, 4) !important;
+}
+
+
+
+.container .mat-form-field {
+    width: 220px;
+}
+  
+.container form {
+   margin-bottom: 20px;
+}
+  
+.container form > * {
+  margin: 5px 0;
+}
+  
+.container .mat-radio-button {
+  margin: 0 12px;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label .mat-form-field.disabled{
+  /*change color of label*/
+  color:  rgb(0, 255, 34);
+ }
+
+
+ ::ng-deep.mat-form-field  .mat-form-field-label{
+   color:rgb(75, 212, 11) !important;
+
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color:  rgb(12 70 141) !important;
+ }
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color:  rgb(47, 179, 7);
+}
+
+
+:host /deep/ ng2-smart-table thead > tr > th  { 
+  background-color:rgb(136, 197, 247);  
+}
+:host /deep/ ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  text-align: center;
+  color: rgb(53, 177, 4);
+}

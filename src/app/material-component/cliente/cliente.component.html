@@ -1,0 +1,71 @@
+<mat-card>
+    <mat-card-content>
+    <mat-card-title>Cliente</mat-card-title>
+    <!--mat-card-subtitle>Expansion panel</mat-card-subtitle-->
+    
+        <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Datos de la Empresa </mat-panel-title>
+                    <mat-panel-description> 
+                        <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.nombre"  placeholder="Nombre">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.cif"  placeholder="CIF">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.telefono"  placeholder="Teléfono">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.email"  placeholder="Email">
+                </mat-form-field>
+                
+                <mat-action-row>
+                    <button mat-button color="primary" (click)="nextStep()">Dirección</button>
+                    <button mat-button color="primary" (click)="saveCliente()">Guardar</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Dirección </mat-panel-title>
+                    <mat-panel-description> 
+                        <mat-icon>map</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.direccion"  placeholder="Dirección">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.cp" placeholder="Código Postal">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.poblacion"  placeholder="Población">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="string"  [(ngModel)]="cliente.provincia"  placeholder="Provincia">
+                </mat-form-field>
+                <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Datos</button>
+                    <button mat-button color="primary" (click)="nextStep()">Observaciones</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Observaciones </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput type="textarea"  [(ngModel)]="cliente.observaciones" placeholder="Observaciones">
+                </mat-form-field>
+                <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+                    <button mat-button color="primary" (click)="saveCliente()">Guardar</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
+

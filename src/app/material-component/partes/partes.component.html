@@ -1,0 +1,9 @@
+<mat-card>
+	<mat-card-content>    
+	<mat-card-title>Facturas</mat-card-title>
+    <div align="end">            
+        <button mat-raised-button color="warn" (click)="create($event)">Nuevo</button>
+    </div>  
+        <ng2-smart-table  (deleteConfirm)="delete($event)" (userRowSelect)="edit($event)" [settings]="settings" [source]="facturas | async"></ng2-smart-table>
+    </mat-card-content>    
+</mat-card>

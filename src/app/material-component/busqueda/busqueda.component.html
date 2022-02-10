@@ -1,0 +1,175 @@
+<mat-card>
+    <mat-card-content>
+    <mat-card-title>Búsqueda de Partes Nuevos</mat-card-title>
+    <!--mat-card-subtitle>Expansion panel</mat-card-subtitle-->
+    
+        <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Datos del Pedido </mat-panel-title>
+                    <mat-panel-description> 
+                        <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header> 
+                
+                <div class="container">
+               
+                    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.cliente"  placeholder="Cliente">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.om"  placeholder="OM">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.numPedido"  placeholder="Nº Pedido">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.numFactura"  placeholder="Nº Factura">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.numSolCompra"  placeholder="Nº Solicitud">
+                      </mat-form-field>
+
+                      
+
+                    </div>
+                    
+                    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                        <mat-form-field>
+                          <input matInput placeholder="Fecha pedido Inicial" [matDatepicker]="picker"  [(ngModel)]="fechaPedidoIni" 
+                          (focus)="picker.open()" readonly> 
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                          <input matInput placeholder="Fecha Factura Inicial" [matDatepicker]="pickerFFI"  [(ngModel)]="fechaFacturaIni" 
+                          (focus)="pickerFFI.open()" readonly> 
+                          <mat-datepicker #pickerFFI></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <input matInput placeholder="Fecha Llegada Inicial" [matDatepicker]="picker3"  [(ngModel)]="fechaFabricaIni" 
+                          (focus)="picker3.open()" readonly> 
+                          <mat-datepicker #picker3></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <input matInput type="string"  [(ngModel)]="busqueda.numChasis"  placeholder="Nº Chasis">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="string"  [(ngModel)]="busqueda.numBastidor"  placeholder="Nº Bastidor">
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                          <input matInput type="string"  [(ngModel)]="busqueda.lugarEntrega"  placeholder="L. Entrega">
+                        </mat-form-field>
+
+                    </div>
+
+                    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                          <mat-form-field>
+                            <input matInput placeholder="Fecha pedido Fin" [matDatepicker]="picker2"  [(ngModel)]="fechaPedidoFin" 
+                            (focus)="picker2.open()" readonly> 
+                            <mat-datepicker #picker2></mat-datepicker>
+                          </mat-form-field>
+
+
+                          <mat-form-field>
+                            <input matInput placeholder="Fecha Factura Fin" [matDatepicker]="pickerFFF"  [(ngModel)]="fechaFacturaFin" 
+                            (focus)="pickerFFF.open()" readonly> 
+                            <mat-datepicker #pickerFFF></mat-datepicker>
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <input matInput placeholder="Fecha Llegada Final" [matDatepicker]="picker4"  [(ngModel)]="fechaFabricaFin" 
+                            (focus)="picker4.open()" readonly> 
+                            <mat-datepicker #picker4></mat-datepicker>
+                          </mat-form-field>           
+
+                          <mat-form-field>
+                            <input matInput type="string"  [(ngModel)]="busqueda.motor"  placeholder="Motor">
+                          </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="string"  [(ngModel)]="busqueda.modelo"  placeholder="Modelo">
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                          <input matInput type="string"  [(ngModel)]="busqueda.vendedor"  placeholder="Vendedor">
+                          <mat-select [(value)]="busqueda.vendedor">
+                            <mat-option value="1">I.Rubio</mat-option>
+                            <mat-option value="2">X.Carbonell</mat-option>
+                            <mat-option value="3">S.Bellot</mat-option>
+                            <mat-option value="4">J.Verdu</mat-option>
+                            <mat-option value="5"></mat-option>
+                            <mat-option value="6">M.Benito</mat-option>
+                            <mat-option value="7">J.Serrano</mat-option>
+                            <mat-option value="8">J.Frau</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                  
+                    </div>  
+
+                    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+                      <mat-form-field>
+                        <input matInput placeholder="CMR Inicial" [matDatepicker]="pickerCMRI"  [(ngModel)]="cmrIni" 
+                        (focus)="pickerCMRI.open()" readonly> 
+                        <mat-datepicker #pickerCMRI></mat-datepicker>
+                      </mat-form-field>
+                      
+                      <mat-form-field>
+                        <input matInput type="string"  [(ngModel)]="busqueda.vehiculoUsado"  placeholder="Vehículo Usado">
+                      </mat-form-field>
+
+                    </div>
+
+
+                    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+                      
+                      <mat-form-field>
+                        <input matInput placeholder="CMR Final" [matDatepicker]="pickerCMRF"  [(ngModel)]="cmrFin" 
+                        (focus)="pickerCMRF.open()" readonly> 
+                        <mat-datepicker #pickerCMRF></mat-datepicker>
+                      </mat-form-field> 
+
+                    </div>
+
+
+                </div>
+
+                <mat-action-row>
+                    <button mat-button color="primary" (click)="nextStep()">Recoger</button>
+                    <button mat-button color="primary" (click)="search()">Buscar</button> 
+                    <button  mat-button color="primary" (click)="downloadAsPDF()">PDF</button>  
+                    <button  mat-button color="primary" (click)="exportexcel()">Excel</button>  
+                </mat-action-row>
+
+            </mat-expansion-panel>
+           
+           
+        </mat-accordion>
+    </mat-card-content>
+
+    <div id="pdfTable" #pdfTable>
+
+      <ng2-smart-table id="resultados"  (deleteConfirm)="delete($event)" (userRowSelect)="edit($event)"
+      [settings]="settings" [source]="partes | async"></ng2-smart-table>
+
+    </div>
+  
+
+
+</mat-card>
+
+
