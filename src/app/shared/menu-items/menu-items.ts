@@ -12,10 +12,11 @@ const MENUITEMS = [
     state: 'facturas',
     type: 'link',
     name: 'Facturas',
-    icon: 'assignment_turned_in'
+    icon: 'local_shipping'
   },
-  { state: 'busqueda', type: 'link', name: 'Listados', icon: 'view_comfy' },
-  { state: 'clientes', type: 'link', name: 'Clientes', icon: 'adb' },
+  { state: 'anticipos', type: 'link', name: 'Anticipos', icon: 'assignment_turned_in' },
+  { state: 'cancelaciones', type: 'link', name: 'Cancelaciones', icon: 'verified' },
+  { state: 'clientes', type: 'link', name: 'Clientes', icon: 'people' },
   
  ];
 

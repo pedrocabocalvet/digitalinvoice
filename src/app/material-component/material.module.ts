@@ -38,6 +38,8 @@ import { ParteComponent } from './parte/parte.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AnticiposComponent } from './anticipos/anticipos.component';
+import { CancelacionesComponent } from './cancelaciones/cancelaciones.component';
 
 @NgModule({
   imports: [
@@ -76,7 +78,9 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ClientesComponent,
     ParteComponent,
     ClienteComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    AnticiposComponent,
+    CancelacionesComponent
   
   ]
 })

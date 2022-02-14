@@ -21,6 +21,8 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ParteComponent } from './parte/parte.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AnticiposComponent } from './anticipos/anticipos.component';
+import { CancelacionesComponent } from './cancelaciones/cancelaciones.component';
 
 
 export const MaterialRoutes: Routes = [
@@ -57,8 +59,8 @@ export const MaterialRoutes: Routes = [
     component: ChipsComponent
   },
   {
-    path: 'toolbar',
-    component: ToolbarComponent
+    path: 'cancelaciones',
+    component: CancelacionesComponent
   },
   {
     path: 'progress-snipper',
@@ -74,8 +76,8 @@ export const MaterialRoutes: Routes = [
 
   },
   {
-    path: 'busqueda', 
-    component: BusquedaComponent 
+    path: 'anticipos', 
+    component: AnticiposComponent 
 
   },
   {
