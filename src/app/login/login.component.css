@@ -1,0 +1,13 @@
+mat-card.card-login {
+    width: 80%;
+    margin: 100px auto 50px auto;
+}
+
+.div-button {
+    width: 80%;
+    margin: auto;
+}
+
+.div-button button {
+    width: 100%;
+}

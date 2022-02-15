@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="mat-toolbar topbar telative mat-primary mat-toolbar-single-row">
+    <mat-toolbar-row>
+        <span><img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"></span>
+      </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-sidenav-container page-wrapper">
+    <mat-card class="mat-card card-login">
+        <mat-card-content class="mat-card-content">
+            <mat-card-title class="mat-card-title">Login</mat-card-title>
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="Nombre de usuario" [(ngModel)]="user" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput [(ngModel)]="password" required>
+              </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+    <div class="div-button">
+        <button [disabled]="!user || !password" mat-raised-button (click)="doLogin()" color="primary">Warn</button>
+    </div>
+  </mat-sidenav-container>
+
